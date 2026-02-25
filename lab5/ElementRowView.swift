@@ -8,8 +8,8 @@ import SwiftUI
 
 struct ElementRowView: View {
     var element: ElementData
-
-
+    
+    
     var body: some View {
         VStack(alignment: .leading) {
             Text(element.name)

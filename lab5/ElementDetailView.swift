@@ -22,12 +22,13 @@ struct ElementDetailView: View {
                 Text("Spell's name: \(element.name)").frame(maxWidth: .infinity, alignment: .leading)
                 Spacer().frame(height: 15)
                 Text("Spell's level: \(element.level)").multilineTextAlignment(.leading).frame(maxWidth: .infinity, alignment: .leading)
+                Spacer().frame(height: 15)
                 Text("API Url for spell: https://www.dnd5eapi.co/\(element.url)").multilineTextAlignment(.leading).frame(maxWidth: .infinity, alignment: .leading)
             }.padding([.horizontal], 10)
         }
         .navigationBarTitleDisplayMode(.inline)
-         
-    }
         
+    }
+    
 }
 

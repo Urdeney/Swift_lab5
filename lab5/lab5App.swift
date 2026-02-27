@@ -43,34 +43,6 @@ class listViewModel: ObservableObject  {
     }
 }
 
-/*
- class listViewModel: ObservableObject  {
-     let url = URL(string: "https://api.github.com/users/OlegTerV/repos")
-     let session = URLSession.shared
-     @Published var someElements:[ElementData]? = nil
-     
-     func getElements () async throws {
-         var request = URLRequest(url: url!)
-         request.httpMethod = "GET"
-
-         let (data, response) = try await URLSession.shared.data(for: request)
-         if !(200...299).contains((response as? HTTPURLResponse)!.statusCode) {
-             print("Ошибка. Status: \((response as? HTTPURLResponse)!.statusCode)")
-             throw NetworkErrors.serverError(statusCode: (response as? HTTPURLResponse)!.statusCode)
-             //throw NSError(domain: "Ошибка. Status: \((response as? HTTPURLResponse)!.statusCode)", code: 0)
-         }
-         do {
-             let repos = try JSONDecoder().decode([ElementData].self, from: data)
-             someElements = repos //main actor
-         }
-         catch {
-             someElements = []
-             throw NetworkErrors.invalidData
-         }
-     }
- }
-*/
-
 enum NetworkErrors: Error {
     case serverError(statusCode: Int)
     case invalidData
